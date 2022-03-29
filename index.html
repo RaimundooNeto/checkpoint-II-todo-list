@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="styles/acesso.css">
 
   <!-- ---------------------- lógica aplicada no login ----------------------- -->
-  <script src="/scripts/utils.js"></script>
-  <script src="/scripts/index.js"></script>
+  <script src="/scripts/utils.js" defer></script>
+  <script src="/scripts/index.js" defer></script>
 
 </head>
 
@@ -31,11 +31,11 @@
 
       <label>
         Email:
-        <input id="inputEmail" type="text">
+        <input id="inputEmail" type="email" required>
       </label>
       <label>
         Senha:
-        <input id="inputPassword" type="password">
+        <input id="inputPassword" type="password" required minlength="6">
       </label>
 
       <button type="submit">Acessar</button>
