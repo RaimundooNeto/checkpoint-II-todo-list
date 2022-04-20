@@ -1,4 +1,4 @@
-import { setToken } from '../shared/storage-service.js';
+import { setToken, getToken, deleteToken } from '../shared/storage-service.js';
 import { translateErrors } from '../shared/utils.js';
 
 let myHeaders = new Headers();
@@ -58,9 +58,39 @@ export function signup(user) {
     else {
       response.json()
       .then(result => {
-        toastr.error(translateErrors(result))
+        toastr.error(translateErrors(result));
       })
       
     }
   })
 }
+
+export async function getUser() {
+  return new Promise(resolve => {
+    myHeaders.append('authorization', getToken());
+
+    const requestOptions = {
+      method: 'GET',
+      headers: myHeaders
+    };
+  
+    fetch("https://ctd-todo-api.herokuapp.com/v1/users/getMe", requestOptions)
+    .then(response => {
+      if(response.ok) {
+        response.json()
+        .then(result => {
+          resolve(result); 
+        })
+      }
+      else {
+        resolve(null);
+      }
+    })
+  })
+
+}
+
+export function logOut() {
+  deleteToken();
+  window.location.href = '../index.html';
+} 
