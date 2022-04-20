@@ -7,12 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-Do App</title>
 
+  <!-- ---------------- jquery ---------------- -->
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+  <!-- ---------------- toastr ---------------- -->
+  <link rel="stylesheet" href="./plugins/toastr/toastr.min.css">
+  <script src="./plugins/toastr/toastr.min.js" defer></script>
+
   <!-- ---------------- estilos compartilhados entre login e signup ---------------- -->
   <link rel="stylesheet" href="styles/acesso.css">
 
   <!-- ---------------------- lógica aplicada no registro -------------------- -->
-  <script src="/scripts/utils.js"></script>
-  <script src="/scripts/signup.js"></script>
+  <script src="/scripts/signup.js" defer type="module"></script>
 
 </head>
 
@@ -29,26 +38,31 @@
 
       <label>
         Nome:
-        <input type="text">
+        <input id="inputName" type="text" required minlength="3" autocomplete="off">
+        <span class="error"></span>
       </label>
       <label>
-        Apelido:
-        <input type="text">
+        Sobrenome:
+        <input id="inputLastName" type="text" required minlength="3" autocomplete="off">
+        <span class="error"></span>
       </label>
       <label>
         Email:
-        <input type="text">
+        <input id="inputEmail" type="email" required autocomplete="off">
+        <span class="error"></span>
       </label>
       <label>
         Senha:
-        <input type="password">
+        <input id="inputPassword" type="password" required minlength="6" autocomplete="off">
+        <span class="error"></span>
       </label>
       <label>
         Repetir senha:
-        <input type="password">
+        <input id="inputRepeatPassword" type="password" required minlength="6" autocomplete="off">
+        <span class="error"></span>
       </label>
 
-      <button>Criar conta</button>
+      <button type="submit">Criar conta</button>
 
     </form>
     <div class="ingressar">

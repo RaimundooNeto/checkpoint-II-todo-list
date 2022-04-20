@@ -7,12 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-Do App</title>
 
+  <!-- ---------------- jquery ---------------- -->
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+  <!-- ---------------- toastr ---------------- -->
+  <link rel="stylesheet" href="./plugins/toastr/toastr.min.css">
+  <script src="./plugins/toastr/toastr.min.js" defer></script>
+  
   <!-- ---------------- estilos compartilhados entre login e signup ---------------- -->
   <link rel="stylesheet" href="styles/acesso.css">
 
   <!-- ---------------------- lógica aplicada no login ----------------------- -->
-  <script src="/scripts/utils.js" defer></script>
-  <script src="/scripts/index.js" defer></script>
+  <script src="/scripts/index.js" defer type="module"></script>
 
 </head>
 
@@ -32,10 +41,12 @@
       <label>
         Email:
         <input id="inputEmail" type="email" required>
+        <span class="error"></span>
       </label>
       <label>
         Senha:
         <input id="inputPassword" type="password" required minlength="6">
+        <span class="error"></span>
       </label>
 
       <button type="submit">Acessar</button>

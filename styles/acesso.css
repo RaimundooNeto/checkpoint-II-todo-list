@@ -89,3 +89,11 @@ button {
   align-items: center;
   justify-content: center;
 }
+
+.invalid {
+  border-color: red;
+}
+
+span.error.active {
+  color:red;
+}
