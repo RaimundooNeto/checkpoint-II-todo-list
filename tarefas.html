@@ -23,6 +23,16 @@
   
   <script src="./scripts/tasks.js" type="module" defer></script>
 
+   <!-- ---------------- jquery ---------------- -->
+   <script
+   src="https://code.jquery.com/jquery-3.6.0.min.js"
+   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+   crossorigin="anonymous"></script>
+ 
+   <!-- ---------------- toastr ---------------- -->
+   <link rel="stylesheet" href="./plugins/toastr/toastr.min.css">
+   <script src="./plugins/toastr/toastr.min.js" defer></script>
+
   <title>To-Do App</title>
 </head>
 
@@ -43,14 +53,14 @@
 
   <form class="nova-tarefa">
     <div class="not-done "></div>
-    <input id="novaTarea" type="text" placeholder="Nova tarefa">
+    <input id="newTask" type="text" placeholder="Nova tarefa">
     <button type="submit">
       <img src="./assets/plus.png" alt="Adicionar uma nova tarefa">
     </button>
   </form>
 
 
-  <ul class="tarefas-pendentes">
+  <ul class="tarefas-pendentes" id="pendingTasks">
     <div id="skeleton">
       <li class="tarefa">
         <div class="not-done"></div>

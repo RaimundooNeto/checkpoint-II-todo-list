@@ -87,7 +87,6 @@ export async function getUser() {
       }
     })
   })
-
 }
 
 export function logOut() {

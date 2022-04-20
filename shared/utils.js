@@ -76,8 +76,20 @@ export function translateErrors(error) {
     'El usuario no existe': 'O usuário não existe',
     'El usuario ya se encuentra registrado': 'O usuário já está registrado',
     'Alguno de los datos requeridos está incompleto': 'Algum dos dados requeridos está incompleto',
+    'Requiere Autorización': 'Autorização requerida',
     'default': 'Erro interno do servidor!'
   }
 
   return errors[error] || errors['default'];
+}
+
+// Format date ___________________________________
+
+export function formatDate(date) {
+  let newDate = new Date(date);
+  const day = newDate.getDate();
+  const month = newDate.getMonth();
+  const year = newDate.getFullYear();
+
+  return `${day}/${month}/${year}`;
 }
